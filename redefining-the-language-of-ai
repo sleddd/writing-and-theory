@@ -1,6 +1,4 @@
-What are we really talking about when we say "AI"? - Redefining the Language of AI 
-by Claudette Raynor
-
+Redefining the Language of AI: What are we really talking about when we say "AI"?
 Doing some research recently on Google's UPI (user profile information) patent, titled "Generating User Information for Use in Targeted Advertising," I noticed something worth pulling on: the patent explicitly relies on ML. A score for an attribute and value is determined by a machine learning classifier that predicts UPI attribute values using words from previously deployed queries. Given keywords related to "women's health" in previous searches, the classifier may infer the user is a woman with probability 0.8; given Japanese words in queries, it may infer the user is Japanese with probability 0.9. The same classifiers are used to sort users and documents into broad categories — geography, topic, ethnicity, reading level.
 That patent begs a question: what is ML, and how does it differ from AI? Lately, every explanation seems to collapse into the same shape — weighting things, whether in a simple array or in a larger neural network. Is that all there is to it? What is the real difference between AI and machine learning, and what really is artificial intelligence?
 The terminology problem
@@ -115,7 +113,7 @@ There's a narrow technical sense where "emergence" still does some work: when sy
 So even the strongest case for emergence reduces, on inspection, to "humans have predictable limits in reasoning about composed systems." A fact about us. Not a property out there in the world.
 The AI doomer move of treating emergence as a sign that we're losing control of something that's "becoming" autonomous is misframed. We never had a map. We didn't lose anything; we never had it. The AI booster move of treating emergence as evidence of latent intelligence "wanting to come out" is equally misframed. There's no wanting. There's a function with a domain and a range and outputs we didn't enumerate.
 We have built systems with vast unmapped capability spaces, and we deploy them at scale without the tools to characterize what's in those spaces. That's the actual problem. It's not about the systems being mysterious; it's about us being negligent or rushed about mapping what we built.
-The clearer version
+The honest version
 You can't credibly label something "emergent" without a baseline of what was expected, and we don't have that baseline. To call behavior emergent honestly, you'd need to be able to say: given the architecture, training data, and objective, the expected behavior space was X, and what we observed was outside X. But nobody can specify X for a billion-parameter network. We have no theory that predicts what a trained transformer should and shouldn't be able to do. So when something surprises us, we have no principled way to distinguish:
 behavior that was always trivially implied by the setup but we didn't think about
 behavior that's a predictable consequence of scale we didn't bother to compute
@@ -283,4 +281,82 @@ The field doesn't quite let itself say that some significant fraction of AI rese
 Wanting to create new forms of mind is not intrinsically bad. But wanting the systems to be minded contaminates the scientific question of whether they are. You can't run a clean experiment on whether a system has properties X, Y, Z when you've staked your identity, career, and self-image on the answer being yes. The field is not, in many cases, in an epistemic position to evaluate its own systems neutrally. The wish is doing too much work.
 This is why any discussion of AI needs to first agree to more normative terms — terms that help us examine the technology as objectively as we can for what it is and not what we'd hope it would be.
 
+Sources Cited & Further Reading
+Works cited in the chapter
+Patents
+Bharat, K., Lawrence, S., & Sahami, M. (2003, filed; 2016 granted). Generating user information for use in targeted advertising. U.S. Patent No. 9,235,849 B2. Assigned to Google Inc. Available at https://patents.google.com/patent/US9235849B2
+The patent describes how user profile information (UPI) can be inferred from past search queries and document selections using machine learning classifiers and graph-based inference. It is the document whose explicit reliance on ML inference of demographic attributes opens the chapter.
+Emergence and scaling
+Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., Yogatama, D., Bosma, M., Zhou, D., Metzler, D., Chi, E. H., Hashimoto, T., Vinyals, O., Liang, P., Dean, J., & Fedus, W. (2022). Emergent abilities of large language models. Transactions on Machine Learning Research. arXiv:2206.07682.
+The paper that popularized the claim that LLMs exhibit discontinuous capability jumps with scale. Defines an "emergent ability" as one not present in smaller models but present in larger ones. Co-authored across Google Research, Stanford, UNC Chapel Hill, and DeepMind.
+Schaeffer, R., Miranda, B., & Koyejo, S. (2023). Are emergent abilities of large language models a mirage? Advances in Neural Information Processing Systems 36 (NeurIPS 2023). Outstanding Paper Award. arXiv:2304.15004.
+The critical reply to Wei et al. Argues that many apparent emergent abilities are artifacts of nonlinear or discontinuous evaluation metrics; when measured with smoother metrics, the same capabilities improve gradually. The paper that narrowed (but did not eliminate) the empirical case for emergence.
+Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., & Amodei, D. (2020). Scaling laws for neural language models. arXiv:2001.08361.
+The foundational paper on how model performance scales predictably with parameters, data, and compute. Useful background for the "continuous improvement" side of the emergence debate.
+In-context learning as implicit gradient descent
+Dai, D., Sun, Y., Dong, L., Hao, Y., Ma, S., Sui, Z., & Wei, F. (2023). Why can GPT learn in-context? Language models implicitly perform gradient descent as meta-optimizers. arXiv:2212.10559. Microsoft Research and Peking University.
+Argues that transformer attention has a dual form of gradient descent, and that in-context learning is best understood as implicit fine-tuning — the model uses its static weights to simulate optimization on the examples in the prompt. The technical basis for the claim in the chapter that ICL is meta-optimization rather than a "new cognitive faculty."
+von Oswald, J., Niklasson, E., Randazzo, E., Sacramento, J., Mordvintsev, A., Zhmoginov, A., & Vladymyrov, M. (2023). Transformers learn in-context by gradient descent. Proceedings of the 40th International Conference on Machine Learning. arXiv:2212.07677.
+A complementary paper showing constructively how linear self-attention can implement one step of gradient descent, with empirical confirmation that trained transformers learn solutions matching this construction. Reinforces the "implicit optimization" framing.
+Convolutional networks and feature learning
+Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. Advances in Neural Information Processing Systems 25 (NIPS 2012), pp. 1097–1105.
+The AlexNet paper. Demonstrated that GPU-trained deep convolutional networks could decisively beat hand-crafted feature pipelines on ImageNet. The point of reference for the chapter's discussion of "emergent" feature hierarchies — and for the observation that the edge detectors it learned were the same Gabor-like filters humans had been hand-crafting for decades (e.g., in SIFT).
+Lowe, D. G. (2004). Distinctive image features from scale-invariant keypoints. International Journal of Computer Vision, 60(2), 91–110.
+The SIFT paper. The hand-crafted descriptor that AlexNet's first-layer filters effectively re-derived from raw pixels. Useful for showing that the "emergent" features were known engineering primitives.
+Evolutionary computation and emergent behavior
+Sims, K. (1994). Evolving virtual creatures. SIGGRAPH '94: Proceedings of the 21st Annual Conference on Computer Graphics and Interactive Techniques
+The classic demonstration that evolutionary algorithms produce locomotion strategies the designer didn't anticipate. The reference for the chapter's argument that emergent-style behavior predates transformers by decades.
+Reinforcement learning
+Silver, D., Huang, A., Maddison, C. J., Guez, A., Sifre, L., van den Driessche, G., Schrittwieser, J., Antonoglou, I., Panneershelvam, V., Lanctot, M., et al. (2016). Mastering the game of Go with deep neural networks and tree search. Nature, 529(7587), 484–489.
+The AlphaGo paper. Source for "Move 37" against Lee Sedol.
+Baker, B., Kanitscheider, I., Markov, T., Wu, Y., Powell, G., McGrew, B., & Mordatch, I. (2020). Emergent tool use from multi-agent autocurricula. International Conference on Learning Representations. arXiv:1909.07528.
+The OpenAI hide-and-seek paper. Source for the emergent tool use, ramp surfing, and box locking strategies cited in the chapter.
+Vinyals, O., Babuschkin, I., Czarnecki, W. M., Mathieu, M., Dudzik, A., Chung, J., et al. (2019). Grandmaster level in StarCraft II using multi-agent reinforcement learning. Nature, 575(7782), 350–354.
+The AlphaStar paper.
+Chess (pre-ML AI)
+Campbell, M., Hoane, A. J., & Hsu, F.-H. (2002). Deep Blue. Artificial Intelligence, 134(1–2), 57–83.
+The technical retrospective by Deep Blue's architects. Useful for verifying the claim that Deep Blue's success came from massive parallel search and hand-tuned evaluation, with no significant machine learning component of the modern variety.
+Cellular automata and complex systems
+Gardner, M. (1970). Mathematical games: The fantastic combinations of John Conway's new solitaire game "life." Scientific American, 223(4), 120–123.
+The original popular introduction to Conway's Game of Life. Referenced in the chapter as the canonical example of emergence in the strongest complex-systems sense — Turing-complete computation from four trivial rules.
+Rendell, P. (2002). Turing universality of the game of life. In A. Adamatzky (Ed.), Collision-based computing. Springer.
+The construction of a universal Turing machine inside Game of Life, confirming the formal claim that the cellular automaton is computationally complete.
+
+Further reading (not cited but worth pursuing)
+On the philosophy of mind and machine consciousness
+Chalmers, D. J. (1996). The conscious mind: In search of a fundamental theory. Oxford University Press.
+The foundational text on the "hard problem of consciousness." Useful for grounding the chapter's claim that consciousness and intelligence are separable questions.
+Chalmers, D. J. (2023). Could a large language model be conscious? Boston Review, August 9, 2023. Also published as arXiv:2303.07103.
+A direct, balanced treatment of the question the chapter mostly brackets. Chalmers takes the question seriously without overclaiming, which is the position the chapter's "Leaving space for the magical unknown" section is gesturing at.
+Schneider, S. (2019). Artificial you: AI and the future of your mind. Princeton University Press.
+A philosopher's careful treatment of machine consciousness, including proposed tests and the limits of behavioral evidence.
+Dennett, D. C. (1991). Consciousness explained. Little, Brown and Company.
+The functionalist counterweight. Dennett's position is closer to the chapter's deflationary framing of intelligence-as-processing, though Dennett applies it to consciousness itself in ways the chapter does not.
+On AI vocabulary and rhetoric
+Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21), pp. 610–623.
+The "stochastic parrots" paper. A precursor to the chapter's argument about linguistic mystification — Bender and Gebru explicitly push back on agentic vocabulary applied to language models. The paper that got Gebru pushed out of Google.
+Mitchell, M. (2019). Artificial intelligence: A guide for thinking humans. Farrar, Straus and Giroux.
+A clear, non-mystifying overview of what AI systems do and don't do, written for general readers. Closer in spirit to the chapter's framing than most popular AI books.
+Marcus, G., & Davis, E. (2019). Rebooting AI: Building artificial intelligence we can trust. Pantheon.
+A skeptical view of deep learning's reach, arguing for hybrid symbolic-neural approaches. Useful for the chapter's acknowledgment that AI is broader than deep learning, even if the chapter takes a different rhetorical route.
+On the history of AI
+Nilsson, N. J. (2009). The quest for artificial intelligence: A history of ideas and achievements. Cambridge University Press.
+The standard scholarly history, covering symbolic AI through the early statistical learning era. Useful background for the chapter's "AI was the original 1956 umbrella term" framing.
+Russell, S. J., & Norvig, P. (2020). Artificial intelligence: A modern approach (4th ed.). Pearson.
+The canonical AI textbook. The taxonomy of AI techniques — search, logic, planning, probabilistic reasoning, learning — is laid out clearly here. Worth consulting to verify that "AI" properly includes much more than deep learning.
+On interpretability and the unmapped territory
+Olah, C., Mordvintsev, A., & Schubert, L. (2017). Feature visualization. Distill. https://distill.pub/2017/feature-visualization/
+A clear visual treatment of what individual neurons in trained networks respond to. Useful for understanding the "unmapped territory" framing as a tooling problem rather than an ontological one.
+Elhage, N., Hume, T., Olsson, C., Schiefer, N., Henighan, T., Kravec, S., et al. (2022). Toy models of superposition. Transformer Circuits Thread (Anthropic). https://transformer-circuits.pub/2022/toy_model/
+Anthropic's interpretability research. Demonstrates that the "knowledge is smeared across billions of numbers" claim is technical, not rhetorical — features in trained networks are often superposed in non-orthogonal directions.
+On the political economy of AI
+Crawford, K. (2021). Atlas of AI: Power, politics, and the planetary costs of artificial intelligence. Yale University Press.
+A materialist treatment of AI as an infrastructure dependent on labor, minerals, and data extraction. Connects to the chapter's closing list of "questions that open up" once mystification is stripped away.
+Whittaker, M. (2021). The steep cost of capture. Interactions, 28(6), 50–55.
+On how the AI industry's framing shapes the research and policy agenda. Reinforces the chapter's "trapped scientists" argument.
+Bender, E. M., & Hanna, A. (2025). The AI Con: How to fight Big Tech's hype and create the future we want. Harper.
+A direct critique of AI industry rhetoric. Aligned with the chapter's argument that mystifying language serves commercial interests.
+On undefined behavior and software side effects
+Regehr, J. (2010). A guide to undefined behavior in C and C++. Embedded in the Real World blog. https://blog.regehr.org/archives/213
+A clear engineering-side treatment of what "undefined behavior" means and why it matters. Useful for grounding the chapter's analogy between AI surprises and the vocabulary computer science already has for unexpected system outputs.
 
