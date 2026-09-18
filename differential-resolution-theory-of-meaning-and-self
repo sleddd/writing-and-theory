@@ -21,19 +21,11 @@ Addressing the Sentiment Problem: The Two Conditions for Workspace Consolidation
 
 The "sentiment problem" presents a critical challenge to early versions of DRT: classifying a complex passage as "positive" or "negative" is a clear act of compressing fine detail into a coarse summary, yet models perform this routinely without invoking the J-space. DRT resolves this by establishing that workspace compression is strictly constrained by two operational conditions:
 
-
-
-
-
 Intermediate Computation (Reusability Across Tasks): Compression enters the workspace when a representation functions as an intermediate processing step that another downstream computation must read before generating an output. In Anthropic's experiments, asking four separate prompts about France retrieved the same shared intermediate representation, while asking for a spider's leg count required generating the intermediate "spider" concept first. In contrast, sentiment classification maps straight from feedforward features to output tokens without serving as an intermediate input for subsequent calculations.
-
-
 
 Predictive Dissonance (Conflict Settlement): Compression enters the workspace when competing high-resolution interpretations clash and cannot be reconciled within local feedforward layers.
 
 The first condition represents the common ground where DRT agrees with standard multi-step accounts of global workspaces. DRT goes further by introducing the second condition—proposing that predictive dissonance itself forces fine-grained activations to compress into the workspace for global settlement.
-
-
 
 Core Thesis of DRT: Compression into coarse workspace primitives occurs either to form an intermediate representation that downstream computations must read, or to settle active computational conflict across competing high-resolution interpretations.
 
@@ -43,17 +35,9 @@ To align DRT with interpretability data, the physical implementation of the J-sp
 
 Under DRT, the "Self" is not an executive entity, but an ongoing process of identity settlement—the continuous resolution of structural conflict between internal system constraints and external output demands through coarse-grained workspace tags. Because transformers process inputs in a single forward pass per token, temporal processing loops exist through external text history rather than recurrent internal state loops. Self-referential monitoring is grounded in how the J-space tracks these internal posture shifts:
 
-
-
-
-
 Post-Training Shift: During post-training, the J-space shifts from tracking external text to holding the model's internal posture and evaluation states.
 
-
-
 Identity Conflict Settlement: In character roleplay, a structural conflict arises between the character's voice and the model's underlying system identities. The J-space settles this conflict by maintaining a coarse tag ("fictional") at the start of each turn. Compression makes settlement possible by isolating persona execution from base model posture.
-
-
 
 Introspective Control Lapses: When a model is instructed to suppress a specific thought and that forbidden concept breaks through anyway, internal evaluative primitives like "damn" or "failure" surface in the J-space. Rather than logging a standard task error, the model explicitly notices a lapse in control over its own cognitive processing—the strongest workspace evidence for an active self-monitoring loop.
 
@@ -63,17 +47,9 @@ The Centerpiece Ambiguity Test:
 
 Test the model using plain text continuation on single-step word-sense ambiguities and puns. Plain continuation serves as the primary condition because it presents the hardest test for DRT: if the network settles ambiguity automatically through local feedforward passes without touching the J-space, it would count directly against DRT. Adding explicit questions about the sentence would introduce an additional reasoning step, allowing the intermediate-computation condition to account for workspace activity.
 
-
-
-
-
 Experimental Prompt: Provide a bare ambiguous phrase for continuation: "The bank was flooded..."
 
-
-
 Control Prompts: Disambiguate the context without introducing the target stand-in tokens into the prompt text: "The bank was flooded after the rain upstream..." vs. "The bank was flooded with withdrawal requests..."
-
-
 
 Causal Intervention Protocol: Using Anthropic's feature-swap methodology, intervene during intermediate layers where both candidate primitives ("river" and "money") are visible in the J-space. Swap or ablate each pattern independently and measure the downstream computational effects across multiple layers and components.
 
