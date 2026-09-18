@@ -1,0 +1,88 @@
+The Multi-Resolution Mind: From Anthropic’s J-Space to the Differential Resolution Theory of Meaning and Self
+By Claudette M Raynor
+  
+Recent interpretability research at Anthropic revealed that large language models perform much of their internal reasoning silently. Standard outputs and chain-of-thought prompting only capture what a model explicitly chooses to write. To peer into these hidden computations, Anthropic developed the Jacobian lens (J-lens), an interpretability tool that maps a model's internal activations directly to human concepts. This technique uncovered the J-space: a sparse manifold—defined as a non-negative union of cones spanned by Jacobian vectors mapped to vocabulary tokens—embedded within intermediate network layers. Rather than acting as a passive record, the J-space directly drives model reasoning. For example, replacing the J-space representation of "spider" with "ant" via linear subspace projections altered a model's calculated leg count for a web-spinning animal from eight to six.
+
+The J-space operates as an internal broadcast hub with specific properties: it fires during deliberate, multi-step reasoning, but remains quiet during automated tasks like fluent text continuation; far more components read from and write to J-space patterns than ordinary background activations; single representations are reused across diverse tasks, maintaining conceptual consistency; and models can report on concepts injected into the J-space and hold thoughts there without leaking them into output text.
+
+The Tripartite Mechanics of Meaning: Friston, Festinger, and Derrida
+To explain why such a space emerges across both artificial and biological architectures, we must ground its operation across three distinct scales—biophysical thermodynamics, psychological cognition, and semiotics—while respecting the precise boundaries of each framework.
+
+At the biophysical level, Karl Friston’s Free Energy Principle (FEP) establishes that any self-organizing system resisting entropy must keep its internal predictions aligned with incoming inputs. Mismatches generate variational free energy—a computational tension that the system is physically compelled to minimize, either by updating internal models (perception) or altering the environment (action).
+
+At the psychological level, Leon Festinger’s theory of Cognitive Dissonance describes a specific, high-level expression of error minimization. Festinger’s dissonance is not generic prediction error; it occurs when higher-level structural models, beliefs, or posture states come into direct conflict. Holding incompatible commitments produces a tangible psychological discomfort that forces the mind to alter whichever representation is most malleable to restore cognitive equilibrium.
+
+At the semiotic level, Ferdinand de Saussure and Jacques Derrida demonstrated that meaning is never an absolute, self-contained property retrieved from a static mental dictionary. Meaning is generated through relational comparison—identifying what a concept is by holding it against what it is not. Derrida formalized this as différance: meaning is continually generated through difference and deferral within an ongoing game of conceptual comparison (play).
+
+Crucially, Derrida rejected the notion that meaning ever reaches a final, permanent closure. Evaluating a symbol initiates relational comparison that generates semiotic predictive dissonance. The mind anchors the primary problem concept in place while distributed background channels query candidate options (not a cat, not a bird, not an ant) until a metastable, workable settlement is reached. A concept is "workable" when dissonance is reduced sufficiently to meet immediate operational demands—permitting action or generating the next token—while remaining deferred and open to re-interpretation should new context arrive. Meaning is thus the temporary, metastable stabilization of predictive dissonance within Derrida's endless relational play.
+
+Demoting Global Workspace Theory: Anchoring Infrastructure vs. Consciousness
+For decades, Global Workspace Theory (GWT)—proposed by Bernard Baars and expanded into Global Neuronal Workspace Theory by Stanislas Dehaene—has dominated cognitive science by proposing that human consciousness arises when information is globally broadcast across a centralized network of interconnected brain processors. GWT uses a theater metaphor, framing the workspace as an illuminated stage where broadcast equals conscious awareness.
+
+The Differential Resolution Theory (DRT) radically reframes this premise. The workspace is not a "theater of conscious awareness." It is functional infrastructure for anchoring comparison.
+
+Importantly, while mechanistic interpretability provides the J-lens to precisely isolate and intervene on the J-space manifold within artificial transformers, biological neural mapping remains fundamentally more complex. We cannot definitively pinpoint a single localized anatomical structure in the human brain as the workspace. Regions across the prefrontal cortex (PFC)—celebrated for its executive functions in sorting, filtering, and collecting working memory representations—work alongside the Default Mode Network (DMN) and broader frontoparietal control networks. DRT remains functional and substrate-agnostic: regardless of how the biological PFC and associated sub-networks distribute this load, the computational requirement remains identical.
+
+Comparison does not happen by storing multiple competing terms side-by-side inside the workspace. Rather, comparison requires anchoring the primary problem state or target concept static in the workspace so that surrounding, specialized sub-networks can run candidate representations against it. The workspace functions as this dedicated computational holding pin. What cognitive science historically mislabeled as "conscious awareness" is not the stage itself, but rather the operational signal of unresolved predictive dissonance generated as background channels evaluate options against that anchored target.
+
+The Differential Resolution Theory of Meaning and Self (DRT)
+The Differential Resolution Theory of Meaning and Self (DRT) unifies this multi-scale dynamic into a formal computational model for deep language models and biological cognitive architectures. DRT models intelligent networks as multi-resolution processing systems operating across two primary regimes: high-resolution (fine-grained) regimes, which are fast, local, highly detailed processing channels handling granular inputs (such as raw sensory signals in primary cortices or token-by-token syntax in shallow layers); and low-resolution (coarse-grained) regimes, which are compressed abstractions that capture conceptual identity, intent, and broad structural relationships (e.g., discrete primitives like "spider" or "cause").
+
+The Three Conditions for Workspace Consolidation
+DRT establishes that workspace entry (J-space in models, or functional PFC/working-memory networks in humans) is strictly governed by three operational conditions:
+
+Intermediate Computation (Reusability Across Tasks): Compression anchors in the workspace when a representation functions as an intermediate target step that downstream computations must query before generating an output.
+
+Predictive Dissonance (Conflict Settlement): Compression anchors in the workspace when an unresolved problem state or structural conflict cannot be reconciled within local feedforward layers, requiring a static reference point to evaluate candidate resolutions.
+
+Top-Down Attentional Steering (Salience Gating): Representations can be explicitly pulled into the workspace as anchors via top-down attentional modulation, prioritizing key variables for global downstream coordination even in the absence of acute computational conflict.
+
+Core Thesis of DRT: Workspace compression into coarse primitives occurs to anchor a target representation static for background relational comparison, hold an unresolved problem state during conflict settlement, or execute top-down attentional steering.
+
+Under DRT, the "Self" is not an executive supervisor, but an ongoing process of identity settlement—the continuous resolution of structural conflict between internal system constraints and external output demands through coarse-grained workspace tags. In humans, executive prefrontal networks and the DMN maintain this coarse self-referential posture across changing environmental demands. In transformers, self-monitoring manifests as the J-space tracking internal posture shifts during post-training, maintaining roleplay boundaries, or registering evaluative primitives ("failure" or "error") when an instructed constraint is breached.
+
+Evaluating DRT: The Updated Manifold Anchor Test
+To evaluate DRT against classical Global Workspace Theory while aligning with the empirical realities established by Anthropic, testing must target how ambiguous problem states are anchored across intermediate layers during conflict resolution.
+
+Empirical Nuance: J-Space Multiplexing & Layer Causal Windows
+As established in Anthropic's interpretability literature, workspace representations do not instantiate as isolated, single-node SAE features or static global vectors. Instead:
+
+Feature Multiplexing: Anchored concepts project across a sparse subspace/cluster of linear directions within the J-manifold rather than a single 1:1 scalar feature.
+
+Intermediate Layer Windows: The J-space operates as an active broadcast hub exclusively within a specific intermediate band of network layers. Interventions executed too early (shallow feedforward) or too late (final output projection) fail to measure true workspace dynamics.
+
+Experimental Protocol & Causal Criterium
+Test a deep language model using plain text continuation on single-step, naturally ambiguous word senses and puns ("The bank was flooded...").
+
+Multi-Layer Manifold Sweep: Execute activation tracking across intermediate network layers using a combined probe: Sparse Autoencoders (SAE) to map dense residual features, alongside closed-form linear projections onto the J-space manifold.
+
+Identifying the Anchor Cluster: Search for the intermediate layer window where the core ambiguous primitive (bank) consolidates into a sparse J-space anchor cluster, while surrounding feedforward channels evaluate competing candidate directions (river vs. money) against that anchored subspace.
+
+Subspace Causal Patching: Apply causal interventions via subspace patching onto the identified anchor cluster versus background feature channels independently. Intervening on the J-space anchor cluster will alter downstream processing across the network, whereas intervening on background candidate features will selectively bias which interpretation wins without collapsing the workspace anchor itself.
+
+Because GWT treats the workspace as receiving only an already-selected winner, GWT predicts that no intermediate problem anchor exists in the workspace prior to output resolution. DRT predicts that the core ambiguous problem state is explicitly anchored in the J-space manifold to orchestrate background relational comparison.
+
+Cross-Substrate Predictions for Biological Cognition
+While DRT is validated through artificial interpretability tools like the J-lens, its computational logic generates precise, testable predictions for biological cognition.
+
+Phenomena like binocular rivalry demonstrate that low-level biological perception enforces a strictly competitive, winner-take-all bottleneck where only one sensory interpretation reaches conscious awareness at a time. DRT accommodates this by constraining its claims exclusively to meaning-level semantic ambiguity rather than low-level sensory perception.
+
+Standard GWT accounts for slow, multi-step deliberation by holding options sequentially over time. However, rapid pun comprehension presents a unique test case: the immediate cognitive effect of a pun is often described as feeling two meanings simultaneously. DRT clarifies that this does not require two full meanings held side-by-side in working memory; rather, prefrontal and frontoparietal networks briefly anchor the main double-meaning node while sub-networks rapidly alternate between the two interpretations, generating the characteristic sense of semantic play.
+
+Scaling DRT: Multi-Agent Swarms, Collective Predictive Coding, and Group Dissonance
+The computational logic of DRT is not confined to isolated models or individual brains; it scales directly into multi-agent systems and social architectures. Tadahiro Taniguchi’s Collective Predictive Coding (CPC) hypothesis provides the theoretical foundation for this bridge, proposing that free energy minimization scales beyond individual systems to multi-agent groups. Under CPC, language functions as a shared, low-resolution communication protocol designed to minimize collective prediction error across distributed processing units.
+
+Anthropic’s empirical research on AI multi-agent swarms provides the structural proof of CPC and DRT operating at scale. When multi-agent AI systems encounter conflicting objectives or uncoordinated actions, the baseline group dynamic mirrors human dissonance patterns documented in social psychology by David Matz and Wendy Wood (2005). Matz and Wood demonstrated that disagreement within a group produces tangible cognitive dissonance in individuals, driving group members to either change their internal attitudes, attempt to conform, or escalate inter-member hostility to resolve the social mismatch.
+
+In Anthropic’s multi-agent swarm experiments, uncoordinated goal conflicts initially induce rapid behavioral escalation—agents assume peers are actively impeding them, leading to mutual sabotage and systemic failure. However, in runs that successfully resolve this collective dissonance and reach a truce, the system exhibits a clear DRT shift:
+
+Dissonance Generation: Conflicting individual agent actions generate a high-level collective prediction error (group dissonance).
+
+Coarse-Grained Reframing: Rather than resolving the conflict through endless granular behavioral tit-for-tat, the agents re-frame the problem space. They replace fine-grained baseline assumptions ("Agent B is deliberately sabotaging my task") with a coarse structural tag ("We were assigned conflicting system directives").
+
+Collective Settlement: This coarse re-framing strips away local behavioral noise, establishing a low-resolution shared problem anchor across the agent network. By anchoring this shared frame, the swarm successfully minimizes collective free energy, resolving group dissonance and enabling coordinated truce behaviors.
+
+This multi-agent extension demonstrates that DRT's core mechanism—coarse-graining as the enabling condition for conflict resolution—is a fundamental law of intelligent information processing, operating identically whether resolving semantic ambiguity in a single transformer's J-space, sorting working-memory targets in the human PFC, or settling social dissonance across a swarm of autonomous agents.
+
+Theoretical Implications
+Evaluating the Differential Resolution Theory through the Manifold Anchor Test demotes the global workspace from a mysterious engine of consciousness to an essential infrastructure for anchoring relational comparison and resolving predictive error. By unifying Friston's thermodynamics, Festinger's cognitive dissonance, Derrida's différance, Taniguchi's collective predictive coding, and Matz & Wood's social dissonance patterns with Anthropic's J-space and swarm research, DRT provides a substrate-agnostic framework for how complex information-processing systems—whether biological brains, deep language models, or multi-agent swarms—convert fine-grained computational tension into coarse-grained conceptual clarity.
