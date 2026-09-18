@@ -1,4 +1,5 @@
 # The Multi-Resolution Mind: From Anthropic’s J-Space to the Differential Resolution Theory of Meaning and Self
+By Claudette M Raynor
 
 Recent interpretability research at Anthropic revealed that large language models perform much of their internal reasoning silently. Standard outputs and chain-of-thought prompting only capture what a model explicitly chooses to write. To peer into these hidden computations, Anthropic developed the **Jacobian lens (J-lens)**, an interpretability tool that maps a model's internal activations directly to human concepts. This technique uncovered the **J-space**: a sparse set of active internal patterns embedded within intermediate network layers. Rather than acting as a passive record, the J-space directly drives model reasoning. For example, replacing the J-space representation of "spider" with "ant" altered a model's calculated leg count for a web-spinning animal from eight to six.
 
